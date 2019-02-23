@@ -8,3 +8,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Foto Finder</title>
   </head>
+
+  <body>
+    <header class="header-bar">
+      <h1>Foto <img class="logo" src="assets/foto-finder-logo.svg" alt="camera icon logo" style="width:44px;"> Finder</h1>
+        <div class="search">
+          <input type="search" id="search-term" placeholder="Search">
+          <button type="submit" class="search-btn"><i class="fas fa-search fa-lg"></i></button>
+        </div>
+  </header>
+    <section class="form-section">
+      <form name="newPhoto" class="photo-form">
+          <label class="form-title">Title
+            <input type="text" class="title-input">
+          </label>
+          <label class="form-title">Caption
+            <input type="text" class="caption-input"></input> 
+          </label>
+          <button type="submit" class="choose-btn" input type="file" accept="image/*" />Choose File</button>
+          <div class="buttons">
+            <button class="favorites-btn">View Favorites</button>
+            <button class="album-btn">Add to Album</button>
+          </div>
+        </form>
+    </section>
+    <main class="photo-section">
+    </main>
+  </body>
+    <script src="photos.js"></script>
+    <script src="main.js"></script>
+</html>
