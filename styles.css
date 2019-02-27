@@ -161,12 +161,11 @@ button:focus {
   width: 99%;
 }
 
-
 .post-text {
   color: #3E2A35;
 }
 
-/*MEDIA QUERIES*/
+/*/////media queries
 
 @media screen and (max-width: 1452 px) {
   h1 {
