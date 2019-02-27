@@ -1,5 +1,3 @@
-// GLOBAL VARIABLES
-
 var chooseFotoFile = document.querySelector('#choose-file-button');
 var addToAlbum = document.querySelector('.add-to-album');
 var fotoGallery = document.querySelector('.foto-display');
@@ -10,16 +8,12 @@ var caption = document.getElementById('foto-caption');
 var searchInput = document.querySelector('.search');
 var favorites = document.querySelector('.favorite');
 
-// EVENT LISTENERS
-
 window.addEventListener('load', appendPhotos);
 addToAlbum.addEventListener('click', addFotoToAlbum);
 searchInput.addEventListener('input', searchFilter);
 fotoGallery.addEventListener('click', manipulatePost);
 fotoGallery.addEventListener('keyup', manipulatePost);
 favorites.addEventListener('click', viewFavoritePosts);
-
-// FUNCTIONS
 
 function appendPhotos() {
   imagesArr.forEach(function(photo) {
