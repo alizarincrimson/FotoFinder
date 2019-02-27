@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="./normalize.css" rel="stylesheet" type="text/css"/>
-    <link href="./styles.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FotoFinder</title>
-  </head>
-
-  <body>
-    <header class="header-bar">
-      <h1>Foto <img class="logo" src="assets/foto-finder-logo.svg" alt="camera icon logo" style="width:44px;"> Finder</h1>
-        <div class="search">
-          <input type="search" id="search-term" placeholder="Search">
-          <button type="submit" class="search-btn"><i class="fas fa-search fa-lg"></i></button>
+<head>
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+ <title>FotoFinder</title>
+</head>
+<body>
+  <section class="user-input-container">
+    <header>
+      <h1>FOTO<span><img class="logo" src="assets/foto-finder-logo.svg"/></span>FINDER</h1>
+      <div class="search-bar-container">
+        <input class="search" type="search" name="" placeholder="Search">
+        <i class="fas fa-search"></i>
+      </div>
+    </header>
+    <article class="add-and-filter-photos">
+      <form>
+        <label class="user-input" for="foto-title">Title</label>
+        <input class="title-body" id="foto-title" type="text" name="photo-title" maxlength="20">
+        <label class="user-input" for="foto-caption">Caption</label>
+        <textarea class="title-body" id="foto-caption" type="text" name="photo-body-text" maxlength="25"></textarea>
+        <div class="file-button">
+          <label class="choose-file" for="choose-file-button">Choose File</label>
+          <input type="file" id="choose-file-button"><br>
         </div>
-  </header>
-    <section class="form-section">
-      <form name="newPhoto" class="photo-form">
-          <label class="form-title">Title
-            <input type="text" class="title-input" placeholder="Title">
-          </label>
-          <label class="form-title">Caption
-            <input type="text" class="caption-input" placeholder="Caption"></input> 
-          </label>
-          <button type="submit" class="choose-btn" input type="file" accept="image/*" />Choose File</button>
-          <div class="buttons">
-            <button class="favorites-btn">View Favorites</button>
-            <button class="album-btn">Add to Album</button>
-          </div>
-        </form>
-    </section>
-    <main class="photo-section">
-    </main>
-  </body>
-    <script src="photos.js"></script>
-    <script src="main.js"></script>
+        <div class="small-buttons"><button class="add-and-filter-photos-buttons favorite" type="submit">View Favorites</button>
+        <button class="add-and-filter-photos-buttons add-to-album" type="submit">Add to Album</button></div>
+      </form>
+    </article>
+  </section>
+  <section class="foto-display">
+  </section>
+  <script type="text/javascript" src="photos.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
 </html>
