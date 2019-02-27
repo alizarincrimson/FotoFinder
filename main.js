@@ -1,3 +1,5 @@
+// GLOBAL VARIABLES
+
 var chooseFotoFile = document.querySelector('#choose-file-button');
 var addToAlbum = document.querySelector('.add-to-album');
 var fotoGallery = document.querySelector('.foto-display');
@@ -8,12 +10,16 @@ var caption = document.getElementById('foto-caption');
 var searchInput = document.querySelector('.search');
 var favorites = document.querySelector('.favorite');
 
+// EVENT LISTENERS
+
 window.addEventListener('load', appendPhotos);
 addToAlbum.addEventListener('click', addFotoToAlbum);
 searchInput.addEventListener('input', searchFilter);
 fotoGallery.addEventListener('click', manipulatePost);
 fotoGallery.addEventListener('keyup', manipulatePost);
 favorites.addEventListener('click', viewFavoritePosts);
+
+// FUNCTIONS
 
 function appendPhotos() {
   imagesArr.forEach(function(photo) {
@@ -47,7 +53,8 @@ function displayFotos(id, file, title, caption, favorite) {
     var favoriteSVG = `"assets/favorite.svg"`;
   }
   fotoGallery.innerHTML +=
-   `<section class="foto-post" data-id="${id}">
+   `
+   <section class="foto-post" data-id="${id}">
     <input class="post-title post-text" type="text" value="${title}">
     <section class="post-image"><img src=${file} /></section>
     <input class="post-caption post-text" type="text" value="${caption}">
@@ -55,7 +62,8 @@ function displayFotos(id, file, title, caption, favorite) {
       <img class="trash-button" src="assets/delete.svg">
       <img class="heart-button" src=${favoriteSVG}>
     </section>
-  </section>`
+  </section>
+  `
 }
 
 function manipulatePost(e) {
@@ -92,6 +100,7 @@ function editFotoPost(e) {
   var uniquePostCaption = postContainer.children[2];
   var editedFoto = new Photo(uniqueID, uniquePostFile.src, uniquePostTitle.value, uniquePostCaption.value);
   editedFoto.updatePhoto(e);
+// Reassigns the defaults from the main title and caption fields
   uniquePostTitle.setAttribute("value", uniquePostTitle.value);
   uniquePostCaption.setAttribute("value", uniquePostCaption.value);
 }
@@ -136,11 +145,11 @@ function searchFilter() {
 function viewFavoritePosts(e) {
   e.preventDefault();
   removeAllPosts();
-  var favPosts = imagesArr.filter(function(post) {
+  var favoredPosts = imagesArr.filter(function(post) {
     return post.favorite === true;
   });
-  console.log(favPosts);
-  favPosts.forEach(function(post) {
+  console.log(favoredPosts);
+  favoredPosts.forEach(function(post) {
     displayFotos(post.id, post.file, post.title, post.caption, post.favorite);
   });
 }
