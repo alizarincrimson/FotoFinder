@@ -136,11 +136,11 @@ function searchFilter() {
 function viewFavoritePosts(e) {
   e.preventDefault();
   removeAllPosts();
-  var favoredPosts = imagesArr.filter(function(post) {
+  var favPosts = imagesArr.filter(function(post) {
     return post.favorite === true;
   });
-  console.log(favoredPosts);
-  favoredPosts.forEach(function(post) {
+  console.log(favPosts);
+  favPosts.forEach(function(post) {
     displayFotos(post.id, post.file, post.title, post.caption, post.favorite);
   });
 }
